@@ -1,0 +1,23 @@
+# 추후 환경변수 처리 예정
+spring:
+  profiles:
+    active: dev
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        highlight_sql: true
+        show_sql: true
+        format_sql: true
+        connection:
+          characterEncoding: utf-8
+          useUnicode: true
+          CharSet: utf-8
+    open-in-view: false
+    defer-datasource-initialization: true
+
+
+secret:
+  jwt: LZc+59NG5w7Md+ouAz0jFycU+BQ5YsSe4qWZX8P8IhtfR9WmWxfRu0u8pItQZkpD/JuO6H3UjjH9E+JdE8n2Ew==
