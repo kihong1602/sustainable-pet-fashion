@@ -7,7 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import site.echopet.backend.api.order.domain.Order;
+import site.echopet.backend.api.order.domain.Orders;
 import site.echopet.backend.global.type.BaseEntity;
 
 @Entity
@@ -16,8 +16,7 @@ import site.echopet.backend.global.type.BaseEntity;
 public class OrderCustomOption extends BaseEntity {
 
   @ManyToOne(fetch = LAZY)
-  private Order order;
-
+  private Orders orders;
 
   @ManyToOne(fetch = LAZY)
   private CustomOptionValue customOptionValue;

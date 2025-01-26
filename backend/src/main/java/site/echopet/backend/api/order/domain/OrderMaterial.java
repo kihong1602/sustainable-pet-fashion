@@ -22,6 +22,6 @@ public class OrderMaterial extends BaseEntity {
   private Long materialId;
 
   @ManyToOne(fetch = LAZY)
-  private Order order;
-  
+  private Orders orders;
+
 }

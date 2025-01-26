@@ -11,6 +11,6 @@ import site.echopet.backend.global.type.BaseEntity;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Size extends BaseEntity {
 
-  private String size;
+  private String name;
 
 }

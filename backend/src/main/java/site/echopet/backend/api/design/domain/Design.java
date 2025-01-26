@@ -16,8 +16,10 @@ public class Design extends BaseEntity {
 
   private String image;
 
+  private String material;
+
   private Integer price;
 
-  private Integer viewCount;
+  private Long viewCount;
 
 }

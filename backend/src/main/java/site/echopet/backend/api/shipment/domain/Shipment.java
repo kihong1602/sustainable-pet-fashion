@@ -9,7 +9,7 @@ import jakarta.persistence.OneToOne;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import site.echopet.backend.api.order.domain.Order;
+import site.echopet.backend.api.order.domain.Orders;
 import site.echopet.backend.global.converter.ShipmentStatusConverter;
 import site.echopet.backend.global.type.BaseEntity;
 
@@ -30,6 +30,6 @@ public class Shipment extends BaseEntity {
   private String trackingUrl;
 
   @OneToOne(fetch = LAZY)
-  private Order order;
+  private Orders orders;
 
 }

@@ -8,30 +8,33 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import site.echopet.backend.api.auth.domain.Account;
 import site.echopet.backend.api.design.domain.Design;
 import site.echopet.backend.api.pet.domain.Pet;
-import site.echopet.backend.api.shipment.domain.ShipmentInfo;
-import site.echopet.backend.global.converter.OrderStatusConverter;
+import site.echopet.backend.global.converter.MaterialTypeConverter;
 import site.echopet.backend.global.type.BaseEntity;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = PROTECTED)
-public class Order extends BaseEntity {
+public class Cart extends BaseEntity {
 
-  private Boolean isRecycle;
+  @Convert(converter = MaterialTypeConverter.class)
+  private MaterialType materialType;
+
+  private Long materialId;
 
   private Integer totalAmount;
 
-  @Convert(converter = OrderStatusConverter.class)
-  private OrderStatus orderStatus;
+  private String token;
 
   @ManyToOne(fetch = LAZY)
-  private Design design;
+  private Account account;
 
   @ManyToOne(fetch = LAZY)
   private Pet pet;
 
   @ManyToOne(fetch = LAZY)
-  private ShipmentInfo shipmentInfo;
+  private Design design;
+
 }

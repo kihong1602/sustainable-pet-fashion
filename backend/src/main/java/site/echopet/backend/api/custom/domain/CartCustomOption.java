@@ -1,25 +1,24 @@
-package site.echopet.backend.api.design.domain;
+package site.echopet.backend.api.custom.domain;
 
 import static jakarta.persistence.FetchType.LAZY;
+import static lombok.AccessLevel.PROTECTED;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import site.echopet.backend.api.order.domain.Cart;
 import site.echopet.backend.global.type.BaseEntity;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class DesignSize extends BaseEntity {
-
-  private Integer price;
+@NoArgsConstructor(access = PROTECTED)
+public class CartCustomOption extends BaseEntity {
 
   @ManyToOne(fetch = LAZY)
-  private Design design;
+  private Cart cart;
 
   @ManyToOne(fetch = LAZY)
-  private Size size;
+  private CustomOptionValue customOptionValue;
 
 }

@@ -17,21 +17,23 @@ public class Pet extends BaseEntity {
 
   private String name;
 
+  private String type;
+
   private String breed;
+
+  private String gender;
 
   private Float neckCircum;
 
   private Float bodyLength;
 
-  private Float bodyCircum;
+  private Float chestCircum;
 
-  private Float legCircum;
+  private Float waistCircum;
 
-  private Float tailCircum;
+  private String image;
 
-  private String color;
-
-  private String orderRequest;
+  private String memo;
 
   @ManyToOne(fetch = LAZY)
   private Account account;
